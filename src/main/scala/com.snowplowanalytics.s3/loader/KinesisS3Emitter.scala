@@ -52,7 +52,8 @@ class KinesisS3Emitter(
 ) extends IEmitter[EmitterInput]  {
 
   val s3Emitter = new S3Emitter(s3Config, provider, badSink, maxConnectionTime, tracker)
-  val dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+  //val dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+  val dateFormat = new SimpleDateFormat("yyyy/MM/dd/HH/yyyy-MM-dd");  
 
   /**
    * Determines the filename in S3, which is the corresponding
